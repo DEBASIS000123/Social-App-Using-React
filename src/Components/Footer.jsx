@@ -1,5 +1,6 @@
 const Footer=()=>{
   return <>
+  <div className="container">
   <footer class="py-5">
     <div class="row">
       <div class="col-6 col-md-2 mb-3">
@@ -57,6 +58,7 @@ const Footer=()=>{
       </ul>
     </div>
   </footer>
+  </div>
   </>
 }
 export default Footer

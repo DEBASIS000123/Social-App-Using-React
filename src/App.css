@@ -1,0 +1,9 @@
+.Main-div{
+  display: flex;
+}
+.bodyContent{
+  width: 100%;
+}
+.sidebar{
+  min-height:800px;
+}
