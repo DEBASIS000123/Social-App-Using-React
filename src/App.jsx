@@ -6,6 +6,7 @@ import SideBar from './Components/SideBar'
 import Form from './Components/Form'
 import MakeCard from './Components/MakeCard'
 import { useState } from 'react'
+import PostListProvider from './Store/post-list-store'
 
 
 function App() {
@@ -13,8 +14,9 @@ function App() {
 
 
   return (
+    <PostListProvider>
     <div className='Main-div'>
-      <SideBar selectedtab={selectedtab}></SideBar>
+      <SideBar selectedtab={selectedtab} setselectedtab={setselectedtab}></SideBar>
       <div className="bodyContent">
       <Header></Header>
         {selectedtab==="Create Post" && <Form></Form>}
@@ -22,6 +24,7 @@ function App() {
       <Footer></Footer>
       </div>
     </div>
+    </PostListProvider>
   )
 }
 
