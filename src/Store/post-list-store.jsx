@@ -1,10 +1,52 @@
-import { createContext } from "react";
+import { createContext, useReducer } from "react";
 
-const PostList=createContext({});
+
+export const PostList=createContext({
+  postList:[],addPost:()=>{},deletePost:()=>{},
+});
+
+const postListReducer=(currpostlist,action)=>{
+  let newpostlist=currpostlist;
+  if(action.type==="DELETE_POST"){
+    newpostlist=currpostlist.filter(post=>post.id!==action.payload.postid);
+  }
+  return newpostlist;
+};
 
 const PostListProvider=({children})=>{
-  return <PostList.Provider value={[]} >
+ const [postList,dispatchpostlist]=useReducer(postListReducer,DEFAULT_POST);
+
+ const addPost=()=>{};
+ const deletePost=(postid)=>{
+  dispatchpostlist({
+    type: "DELETE_POST",
+    payload:{
+      postid,
+    },
+  });
+ };
+
+
+
+  return <PostList.Provider value={{postList,addPost,deletePost}} >
     {children}
   </PostList.Provider>
 }
+const DEFAULT_POST=[{
+  id:"1",
+  title:"Going to Mumai",
+  body:"Hi Friends , I am going to mumbai for my vacations. Hope to enjoy a lot. Peace out.",
+  reactions:2,
+  hashtags:["#Mumbai","#vacation","#Enjoy"],
+  userId:"user-1"
+},
+{
+  id:"2",
+  title:"Finally Graduated",
+  body:"Hi Friends , I am finally graduated by wasting 4 years. Don't do engineering.",
+  reactions:15,
+  hashtags:["#Graduated","#Happy","#Mood"],
+  userId:"user-2"
+}
+];
 export default PostListProvider
