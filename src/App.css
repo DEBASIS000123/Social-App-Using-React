@@ -5,7 +5,7 @@
   width: 100%;
 }
 .sidebar{
-  min-height:800px;
+  min-height:400px;
 }
 .cardstyle{
   margin: 20px 50px;
@@ -27,4 +27,12 @@
   border: 0.5px solid black;
   padding: 30px;
   border-radius: 6px;
+}
+.Welcome{
+  text-align: center;
+  margin-top: 90px;
+  color: blueviolet;
+}
+.welcome-btn{
+  text-align: center;
 }
