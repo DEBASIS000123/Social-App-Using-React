@@ -10,13 +10,30 @@ const postListReducer=(currpostlist,action)=>{
   if(action.type==="DELETE_POST"){
     newpostlist=currpostlist.filter(post=>post.id!==action.payload.postid);
   }
+  else if(action.type==="ADD_POST"){
+    newpostlist=[action.payload,...currpostlist];
+  }
   return newpostlist;
 };
 
 const PostListProvider=({children})=>{
  const [postList,dispatchpostlist]=useReducer(postListReducer,DEFAULT_POST);
 
- const addPost=()=>{};
+ const addPost=(userid,posttitle,postbody,reactions,tags)=>{
+  dispatchpostlist({
+    type:"ADD_POST",
+    payload:{
+      id:Date.now(),
+    title:posttitle,
+    body:postbody,
+     reactions:reactions,
+    hashtags:tags,
+    userId:userid,
+    },
+  })
+ };
+
+
  const deletePost=(postid)=>{
   dispatchpostlist({
     type: "DELETE_POST",
@@ -32,7 +49,7 @@ const PostListProvider=({children})=>{
     {children}
   </PostList.Provider>
 }
-const DEFAULT_POST=[{
+let DEFAULT_POST=[{
   id:"1",
   title:"Going to Mumai",
   body:"Hi Friends , I am going to mumbai for my vacations. Hope to enjoy a lot. Peace out.",
