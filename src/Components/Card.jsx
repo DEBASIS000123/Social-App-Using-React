@@ -13,8 +13,8 @@ const {deletePost}=useContext(PostList);
     <MdCancel />
     </span>
     <p className="card-text">{post.body}</p>
-    {post.hashtags.map((hashtag)=>(
-      <span key={hashtag+1} className="badge text-bg-primary hashtag">{hashtag}</span>
+    {post.tags.map((hashtag)=>(
+      <span key={hashtag+1} className="badge text-bg-primary hashtag">#{hashtag}</span>
     ))}
     <br></br>
     <button type="button" className="btn btn-outline-primary liked"><FcLike /> {post.reactions}</button>
