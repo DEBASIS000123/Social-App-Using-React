@@ -20,3 +20,11 @@
 .deletebtn{
   cursor: pointer;
 }
+.create-post{
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 50px;
+  border: 0.5px solid black;
+  padding: 30px;
+  border-radius: 6px;
+}
