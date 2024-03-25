@@ -4,7 +4,6 @@ import { createContext, useReducer } from "react";
 export const PostList=createContext({
   postList:[],addPost:()=>{},deletePost:()=>{},addinitialPosts:()=>{},
 });
-
 const postListReducer=(currpostlist,action)=>{
   let newpostlist=currpostlist;
   if(action.type==="DELETE_POST"){
