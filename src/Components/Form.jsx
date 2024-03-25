@@ -2,7 +2,6 @@ import { useContext, useRef } from "react"
 import { PostList } from "../Store/post-list-store";
 
 function Form(){
-
   const {addPost}=useContext(PostList);
 
   const useridEle=useRef();
@@ -24,6 +23,7 @@ function Form(){
     postbodyEle.current.value="";
     reactionsEle.current.value="";
     tagsEle.current.value="";
+
     addPost(userid,posttitle,postbody,reactions,tags);
   }
 
