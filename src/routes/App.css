@@ -1,0 +1,38 @@
+.Main-div{
+  display: flex;
+}
+.bodyContent{
+  width: 100%;
+}
+.sidebar{
+  min-height:400px;
+}
+.cardstyle{
+  margin: 20px 50px;
+  border-radius: 5px;
+}
+.hashtag{
+  margin: 0px 3px;
+}
+.liked{
+  margin: 25px  0px 0px 0px;
+}
+.deletebtn{
+  cursor: pointer;
+}
+.create-post{
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 50px;
+  border: 0.5px solid black;
+  padding: 30px;
+  border-radius: 6px;
+}
+.Welcome{
+  text-align: center;
+  margin-top: 90px;
+  color: blueviolet;
+}
+.welcome-btn{
+  text-align: center;
+}
